@@ -1,6 +1,10 @@
 'use strict';
 
-// let && const
+var _templateObject = _taggedTemplateLiteral(['Hello ', ''], ['Hello ', '']);
+
+function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+// let && const ***********
 
 var buttons = document.querySelectorAll('button');
 
@@ -23,7 +27,7 @@ var MATH = {
     PI: 3.14159
 };
 
-// spread operator
+// spread operator ***********
 
 var arr1 = ['a', 'ab', 'abc'];
 var arr2 = ['f', 'fg', 'fgh'];
@@ -40,3 +44,19 @@ function add(a, b, c) {
 var numbers = [1, 2, 3];
 
 add.apply(undefined, numbers);
+
+// template strings ***********
+
+function createEmail(to, from, subject, message) {
+    console.log('\n        To: ' + to + '\n        From: ' + from + '\n        Subject: ' + subject + '\n        Message: ' + message + '\n    ');
+}
+
+createEmail('naz@gmail.com', '123@gmail.com', 'hello', 'how are you ?');
+
+var name = "Yura";
+
+console.log(upperName(_templateObject, name));
+
+function upperName(literals, value) {
+    return literals[0] + value.toUpperCase();
+}

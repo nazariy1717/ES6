@@ -1,4 +1,4 @@
-// let && const
+// let && const ***********
 
 var buttons = document.querySelectorAll('button');
 
@@ -15,7 +15,7 @@ const MATH = {
 };
 
 
-// spread operator
+// spread operator ***********
 
 let arr1 = ['a','ab','abc'];
 let arr2 = ['f','fg','fgh'];
@@ -32,3 +32,33 @@ function add(a,b,c){
 let numbers = [1,2,3];
 
 add(...numbers);
+
+
+
+// template strings ***********
+
+function createEmail(to,from,subject,message){
+    console.log(`
+        To: ${to}
+        From: ${from}
+        Subject: ${subject}
+        Message: ${message}
+    `);
+}
+
+createEmail('naz@gmail.com','123@gmail.com','hello','how are you ?');
+
+let name = "Yura";
+
+console.log(upperName`Hello ${name}`);
+
+function upperName(literals, value){
+    return literals[0] + value.toUpperCase();
+}
+
+
+
+
+
+
+
