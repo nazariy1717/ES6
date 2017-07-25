@@ -58,7 +58,30 @@ function upperName(literals, value){
 
 
 
+// function parameters ***********
+
+// function greet(greeting, name){
+//     console.log(`${greeting} ${name}`);
+// }
+
+function greet(greeting = 'Hello', name = 'friend'){
+    console.log(`${greeting} ${name}`);
+}
+
+greet('Hi','Bill');
+greet('Hi');
+greet(undefined,'Bill');
+greet();
 
 
 
+function sum(...values){
+    console.log(values);
+    let sum = 0;
+    values.forEach(function(value){
+        sum += value;
+    })
+    console.log(sum);
+}
 
+sum(7,5,3,10);
