@@ -2,6 +2,8 @@
 
 var _templateObject = _taggedTemplateLiteral(['Hello ', ''], ['Hello ', '']);
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 // let && const ***********
@@ -93,3 +95,64 @@ function sum() {
 }
 
 sum(7, 5, 3, 10);
+
+// for ***********
+
+var arr = ['1a', '2b', '3c', '4d'];
+
+for (var item in arr) {
+    console.log(item);
+}for (var index in arr) {
+    console.log(arr[index]);
+}var _iteratorNormalCompletion = true;
+var _didIteratorError = false;
+var _iteratorError = undefined;
+
+try {
+    for (var _iterator = arr[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+        var some = _step.value;
+
+        console.log(some);
+    } // objects ***********
+
+} catch (err) {
+    _didIteratorError = true;
+    _iteratorError = err;
+} finally {
+    try {
+        if (!_iteratorNormalCompletion && _iterator.return) {
+            _iterator.return();
+        }
+    } finally {
+        if (_didIteratorError) {
+            throw _iteratorError;
+        }
+    }
+}
+
+var firstName = 'Bill',
+    lastName = 'Gates',
+    email = 'bill@gmail.com';
+
+var person = {
+    firstName: firstName,
+    lastName: lastName,
+    email: email,
+
+    sayHello: function sayHello() {
+        console.log('Hi ' + this.firstName + ' ' + this.lastName);
+    }
+};
+
+console.log(person);
+person.sayHello();
+
+function createCar(property, value) {
+    var _ref;
+
+    return _ref = {}, _defineProperty(_ref, property, value), _defineProperty(_ref, 'get' + property, function () {
+        return this[property];
+    }), _ref;
+}
+
+console.log(createCar('vin', 1));

@@ -80,8 +80,65 @@ function sum(...values){
     let sum = 0;
     values.forEach(function(value){
         sum += value;
-    })
+    });
     console.log(sum);
 }
 
 sum(7,5,3,10);
+
+
+
+
+// for ***********
+
+let arr = ['1a','2b','3c','4d'];
+
+for( let item in arr)
+    console.log(item);
+
+for( let index in arr)
+    console.log(arr[index]);
+
+for( let some of arr)
+    console.log(some);
+
+
+// objects ***********
+
+
+let firstName = 'Bill',
+    lastName = 'Gates',
+    email = 'bill@gmail.com';
+
+let person = {
+    firstName,
+    lastName,
+    email,
+
+    sayHello() {
+        console.log(`Hi ${this.firstName} ${this.lastName}`);
+    }
+};
+
+console.log(person);
+person.sayHello();
+
+
+
+
+
+function createCar(property, value){
+    return {
+        [property]: value,
+        [`get` + property](){
+            return this[property];
+        }
+    }
+}
+
+console.log(createCar('vin',1));
+
+
+
+
+
